@@ -59,7 +59,7 @@ If we want to include a short motivation for why the most relevant journalist wa
 
 ## Final result
 
-[Demo link]()
+[Demo link](https://relevance-ranking.vercel.app/)
 
 ## Design choices & parts left out
 
