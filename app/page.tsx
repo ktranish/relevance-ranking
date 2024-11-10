@@ -131,7 +131,7 @@ export default function Home() {
                 {newsrooms.data?.newsrooms?.map((item, index) => (
                   <Link
                     key={index}
-                    href={`/${item.toLowerCase()}`}
+                    href={`/newsroom/${item.toLowerCase()}`}
                     className="text-sm/6 font-semibold text-white"
                   >
                     {item} <span aria-hidden="true">→</span>

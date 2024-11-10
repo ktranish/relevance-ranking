@@ -9,27 +9,29 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React, { useState } from "react";
-import { Journalist, Pressrelease } from "../types";
+import { Journalist, Pressrelease } from "../../types";
 import { searchForRelevantJournalists } from "./actions";
 
 export default function Page({
   params,
 }: {
-  params: Promise<{ type: string }>;
+  params: Promise<{ newsroom: string }>;
 }) {
-  const { type } = React.use(params);
+  const { newsroom } = React.use(params);
 
   const [journalists, setJournalists] = useState<Journalist[]>([]);
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["type", type],
+    queryKey: ["newsroom", newsroom],
     queryFn: async () =>
       (await (
         await fetch(
-          process.env.NEXT_PUBLIC_URL + "/api/pressreleases?newsroom=" + type,
+          process.env.NEXT_PUBLIC_URL +
+            "/api/pressreleases?newsroom=" +
+            newsroom,
         )
       ).json()) as Pressrelease[],
-    enabled: !!type,
+    enabled: !!newsroom,
   });
 
   const { mutate, isPending } = useMutation({
@@ -104,7 +106,7 @@ export default function Page({
             </Link>
           </div>
           <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            {type[0].toUpperCase() + type.slice(1)}
+            {newsroom[0].toUpperCase() + newsroom.slice(1)}
           </h1>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
             Open README.md for a detailed explaination on my throught process

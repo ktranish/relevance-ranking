@@ -1,8 +1,8 @@
 "use server";
 
 import { Pinecone } from "@pinecone-database/pinecone";
-import client from "../lib/mongodb";
-import { Journalist, JournalistScore, Pressrelease } from "../types";
+import client from "../../lib/mongodb";
+import { Journalist, JournalistScore, Pressrelease } from "../../types";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
