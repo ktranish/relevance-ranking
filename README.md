@@ -1,5 +1,7 @@
 # My Solution
 
+![mockup](mockup.png)
+
 ## Problem statement
 
 Given two types of datasets, one being articles and one being pressreleases from newsrooms. How can we rate each journalist based on the pressreleases provided from the newsrooms and how can we develop a ranking system that presents the most suitable journalists based on their relevance score?
