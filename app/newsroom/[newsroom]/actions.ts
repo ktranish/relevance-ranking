@@ -97,7 +97,7 @@ export const searchForRelevantJournalists = async (
 
   const prompts = journalistRelevanceScores.map(
     ({ journalist_email, relevance_score }) => ({
-      prompt: `Based on the following press releases:\n${pressReleaseContent}\nExplain why journalist with email ${journalist_email}, who has a relevance score of ${relevance_score}, is a relevant match for this content. Provide a clear reason based on the similarity between the journalist's focus and the press release topics.`,
+      prompt: `Based on the following press releases:\n${pressReleaseContent}\nExplain why journalist with email ${journalist_email}, who has a relevance score of ${relevance_score}, is a relevant match for this content. Provide a clear and concise reason based on the similarity between the journalist's focus and the press release topics.`,
       email: journalist_email,
       relevance_score,
     }),
@@ -109,7 +109,7 @@ export const searchForRelevantJournalists = async (
       const response = await openai.completions.create({
         model: "gpt-3.5-turbo-instruct",
         prompt,
-        max_tokens: 100,
+        max_tokens: 1000,
       });
       return {
         email,
