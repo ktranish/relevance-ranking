@@ -92,7 +92,7 @@ export default function Home() {
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <Link
-              href="https://github.com/ktranish/assignment-journalist-relevance"
+              href="https://github.com/ktranish/relevance-ranking"
               target="_blank"
               className="inline-flex space-x-6"
             >

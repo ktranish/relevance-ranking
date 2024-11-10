@@ -89,7 +89,7 @@ export default function Page({
           </Link>
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <Link
-              href="https://github.com/ktranish/assignment-journalist-relevance"
+              href="https://github.com/ktranish/relevance-ranking"
               target="_blank"
               className="inline-flex space-x-6"
             >
